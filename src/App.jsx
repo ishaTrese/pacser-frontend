@@ -1,16 +1,21 @@
-import { useEffect } from "react"
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext'
+import ProtectedRoute from './components/routing/ProtectedRoute'
+import Login from './pages/auth/Login'
+import Register from './pages/auth/Register'
 
 function App() {
-  useEffect(() => {
-    fetch("http://localhost:8000/api/test")
-      .then(res => res.json())
-      .then(data => console.log(data))
-  }, [])
-
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-      <h1 className="text-yellow-400 text-3xl font-bold">PACSER</h1>
-    </div>
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          {/* Protected routes go here later */}
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   )
 }
 
