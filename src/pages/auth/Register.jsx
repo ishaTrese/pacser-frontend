@@ -41,12 +41,12 @@ function Register() {
     <main className="flex min-h-screen items-center justify-center bg-[#0d1117] px-4 py-8">
       <div className="mx-auto grid w-full max-w-5xl items-center gap-10 lg:grid-cols-2">
         <section className="hidden justify-center lg:flex">
-          <div className="flex h-64 w-64 items-center justify-center rounded-xl border border-slate-300 bg-white shadow-xl">
-            <img src="/chq-logo.png" alt="Company logo" className="h-56 w-56 object-contain" />
+          <div className="flex h-80 w-80 items-center justify-center rounded-xl border border-slate-300 bg-white shadow-xl">
+            <img src="/chq-logo.png" alt="Company logo" className="h-72 w-72 object-contain" />
           </div>
         </section>
 
-        <section className="w-full max-w-md rounded-2xl border border-[#EAB308] bg-[#1a2235] p-8 shadow-2xl lg:justify-self-start">
+        <section className="w-full max-w-md rounded-2xl border border-[#EAB308] bg-[#1a2235] p-6 shadow-2xl lg:justify-self-start">
         <h1 className="mb-1 text-center text-3xl font-semibold text-white">Create Account</h1>
         <p className="mb-6 text-center text-sm text-slate-300">Join and start managing your account</p>
 
@@ -56,7 +56,7 @@ function Register() {
           </p>
         ) : null}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-3">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
               <label htmlFor="firstName" className="mb-1 block text-sm font-medium text-slate-200">

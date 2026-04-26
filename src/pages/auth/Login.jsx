@@ -32,8 +32,8 @@ function Login() {
     <main className="flex min-h-screen items-center justify-center bg-[#0d1117] px-4 py-8">
       <div className="mx-auto grid w-full max-w-5xl items-center gap-10 lg:grid-cols-2">
         <section className="hidden justify-center lg:flex">
-          <div className="flex h-64 w-64 items-center justify-center rounded-xl border border-slate-300 bg-white shadow-xl">
-            <img src="/chq-logo.png" alt="Company logo" className="h-56 w-56 object-contain" />
+          <div className="flex h-80 w-80 items-center justify-center rounded-xl border border-slate-300 bg-white shadow-xl">
+            <img src="/chq-logo.png" alt="Company logo" className="h-72 w-72 object-contain" />
           </div>
         </section>
 

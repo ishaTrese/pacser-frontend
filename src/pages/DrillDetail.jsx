@@ -112,7 +112,7 @@ export default function DrillDetail() {
           >
             <ArrowLeft size={16} /> Back to {drill.module}
           </button>
-          <div className="flex items-end justify-between flex-wrap gap-4">
+          <div className="flex items-center justify-between gap-4">
             <div>
               <h2 className="text-2xl font-extrabold text-slate-900">{drill.label}</h2>
               <p className="text-slate-800 text-sm mt-1">{drill.desc}</p>
@@ -130,8 +130,8 @@ export default function DrillDetail() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
-          <div className="flex h-full flex-col rounded-2xl border-2 border-[#EAB308] bg-[#1a2235] p-7">
+        <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
+          <div className="flex flex-col rounded-2xl border-2 border-[#EAB308] bg-[#1a2235] p-7">
             <h3 className="text-2xl font-extrabold text-white mb-5">Course Content</h3>
             <div className="flex-1 space-y-3 overflow-y-auto pr-1">
               {drill.items.map((item) => (
