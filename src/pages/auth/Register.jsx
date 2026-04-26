@@ -29,7 +29,7 @@ function Register() {
 
     try {
       await register(firstName, lastName, email, password, passwordConfirmation)
-      navigate('/dashboard')
+      navigate('/')
     } catch (submitError) {
       setError(submitError?.response?.data?.message || 'Unable to register. Please try again.')
     } finally {

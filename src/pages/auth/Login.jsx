@@ -20,7 +20,7 @@ function Login() {
 
     try {
       await login(email, password)
-      navigate('/dashboard')
+      navigate('/')
     } catch (submitError) {
       setError(submitError?.response?.data?.message || 'Invalid email or password.')
     } finally {

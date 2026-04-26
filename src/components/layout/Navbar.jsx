@@ -33,6 +33,13 @@ export default function Navbar() {
     navigate('/')
   }
 
+  function getLinkTarget(path) {
+    if (user || path === '/') {
+      return path
+    }
+    return '/login'
+  }
+
   return (
     <nav
       className="w-full flex items-center px-6 h-[72px] gap-6"
@@ -40,40 +47,27 @@ export default function Navbar() {
     >
       {/* Logo */}
       <Link to="/" className="flex-shrink-0 mr-2">
-        <img src="/chq-logo.png" alt="CHQ Logo" className="h-12 w-12 object-contain" />
+        <img src="/chq-logo.png" alt="CHQ Logo" className="h-12 w-12 rounded-xl object-contain" />
       </Link>
 
       {/* Nav Links */}
       <div className="flex items-center gap-1">
-        {user ? (
-          navLinks.map((link) => {
-            const isActive = location.pathname === link.path
-            return (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="px-5 py-2 rounded-md text-sm font-semibold transition-colors duration-150"
-                style={{
-                  backgroundColor: isActive ? '#EAB308' : 'transparent',
-                  color: isActive ? '#0d1117' : '#ffffff',
-                }}
-              >
-                {link.label}
-              </Link>
-            )
-          })
-        ) : (
-          <Link
-            to="/"
-            className="px-5 py-2 rounded-md text-sm font-semibold"
-            style={{
-              backgroundColor: location.pathname === '/' ? '#EAB308' : 'transparent',
-              color: location.pathname === '/' ? '#0d1117' : '#ffffff',
-            }}
-          >
-            Home
-          </Link>
-        )}
+        {navLinks.map((link) => {
+          const isActive = location.pathname === link.path
+          return (
+            <Link
+              key={link.path}
+              to={getLinkTarget(link.path)}
+              className="px-5 py-2 rounded-md text-sm font-semibold transition-colors duration-150"
+              style={{
+                backgroundColor: isActive ? '#EAB308' : 'transparent',
+                color: isActive ? '#0d1117' : '#ffffff',
+              }}
+            >
+              {link.label}
+            </Link>
+          )
+        })}
       </div>
 
       {/* Right side */}
@@ -156,13 +150,21 @@ export default function Navbar() {
             </div>
           </>
         ) : (
-          <Link
-            to="/login"
-            className="px-5 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: '#EAB308', color: '#0d1117' }}
-          >
-            Sign In
-          </Link>
+          <>
+            <Link
+              to="/login"
+              className="px-5 py-2 rounded-full text-sm font-bold border border-slate-400 text-white hover:border-[#EAB308] hover:text-[#EAB308] transition-colors"
+            >
+              Log In
+            </Link>
+            <Link
+              to="/register"
+              className="px-5 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: '#EAB308', color: '#0d1117' }}
+            >
+              Sign Up
+            </Link>
+          </>
         )}
       </div>
     </nav>
