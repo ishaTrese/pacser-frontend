@@ -42,7 +42,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="w-full flex items-center px-6 h-[72px] gap-6"
+      className="w-full flex items-center px-6 h-16 gap-6"
       style={{ backgroundColor: '#0d1117', borderBottom: '2px solid #EAB308' }}
     >
       {/* Logo */}

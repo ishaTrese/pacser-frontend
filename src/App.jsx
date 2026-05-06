@@ -11,6 +11,9 @@ import ModuleDetail from './pages/ModuleDetail'
 import Practice from './pages/Practice'
 import Profile from './pages/Profile'
 import TrackDetail from './pages/TrackDetail'
+import Leaderboard from './pages/Leaderboard'
+import Shop from './pages/Shop'
+import Contact from './pages/Contact'
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
 
@@ -102,7 +105,23 @@ function App() {
             path="/leaderboards"
             element={(
               <ProtectedRoute>
-                <PlaceholderPage title="Leaderboards" />
+                <Leaderboard />
+              </ProtectedRoute>
+            )}
+          />
+          <Route
+            path="/shop"
+            element={(
+              <ProtectedRoute>
+                <Shop />
+              </ProtectedRoute>
+            )}
+          />
+          <Route
+            path="/contact"
+            element={(
+              <ProtectedRoute>
+                <Contact />
               </ProtectedRoute>
             )}
           />
